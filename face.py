@@ -20,7 +20,7 @@ while True:
 
         cv2.rectangle(frame,(x, y), (w, h),(0,255,0),3)
 
-    cv2.imshow("cropped gray image", gray[y:h, x:w])
+    # cv2.imshow("cropped gray image", gray[y:h, x:w])
     cv2.imshow("frame", frame)
 
     if cv2.waitKey(1) == ord('s'):
