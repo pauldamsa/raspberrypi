@@ -33,7 +33,7 @@ while True:
     print('fps: %.2f' % fps)
 
 average_fps = sum(fps_vector) / len(fps_vector)
-print("MEAN FPS: %.2f" % average_fps)
+print("MEAN FPS DLIB: %.2f" % average_fps)
 
 cap.release()
 cv2.destroyAllWindows()

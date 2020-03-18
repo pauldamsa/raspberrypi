@@ -31,7 +31,7 @@ while True: # We repeat infinitely (until break):
     print('fps: %.2f' % fps)
 
 average_fps = sum(fps_vector) / len(fps_vector)
-print("MEAN FPS: %.2f" % average_fps)
+print("MEAN FPS HAAR: %.2f" % average_fps)
 
 video_capture.release() # We turn the webcam off.
 cv2.destroyAllWindows() # We destroy all the windows inside which the images were displayed.
