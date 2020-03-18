@@ -4,9 +4,14 @@ import cv2
 import time
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml') # We load the cascade for the face.
-
+face_vetor = []
 def detect(gray, frame): # We create a function that takes as input the image in black and white (gray) and the original image (frame), and that will return the same image with the detector rectangles. 
     faces = face_cascade.detectMultiScale(gray, 1.3, 5) # We apply the detectMultiScale method from the face cascade to locate one or several faces in the image.
+    
+    
+    face_vetor.append(len(faces))
+    print('faces: %.2f' % len(faces))
+
     for (x, y, w, h) in faces: # For each detected face:
         cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2) # We paint a rectangle around the face.
         roi_gray = gray[y:y+h, x:x+w] # We get the region of interest in the black and white image.
@@ -31,7 +36,10 @@ while True: # We repeat infinitely (until break):
     print('fps: %.2f' % fps)
 
 average_fps = sum(fps_vector) / len(fps_vector)
+averate_faces = sum(face_vetor) / len(face_vetor)
+
 print("MEAN FPS HAAR: %.2f" % average_fps)
+print("MEAN DETECTED FACES HAAR: %.2f" % averate_faces)
 
 video_capture.release() # We turn the webcam off.
 cv2.destroyAllWindows() # We destroy all the windows inside which the images were displayed.

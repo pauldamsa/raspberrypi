@@ -6,6 +6,7 @@ import time
 cap = cv2.VideoCapture(0) # get frames from webcam
 detector = dlib.get_frontal_face_detector() # get frontal face detector from dlib
 fps_vector = []
+face_vetor = []
 while True:
     start = time.time()
     ret, frame = cap.read() # read from the video stream
@@ -30,10 +31,15 @@ while True:
     seconds = end - start
     fps = 1.0 / seconds
     fps_vector.append(fps)
+    face_vetor.append(len(faces))
+    print('faces: %.2f' % len(faces))
     print('fps: %.2f' % fps)
 
 average_fps = sum(fps_vector) / len(fps_vector)
+averate_faces = sum(face_vetor) / len(face_vetor)
+
 print("MEAN FPS DLIB: %.2f" % average_fps)
+print("MEAN DETECTED FACES DLIB: %.2f" % averate_faces)
 
 cap.release()
 cv2.destroyAllWindows()
