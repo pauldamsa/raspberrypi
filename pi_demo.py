@@ -1,4 +1,4 @@
-from armv7l.openvino.inference_engine import IENetwork, IEPlugin
+from openvino.inference_engine import IENetwork, IEPlugin
 import numpy as np
 import cv2
 import os
