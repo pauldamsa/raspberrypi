@@ -13,7 +13,7 @@ imagenet_mean = np.array([104., 117., 124.], dtype=np.float32)
 class_names = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
 t_prediction = 0
 
-image = cv2.imread('/Users/pauldamsa/Desktop/licenta/yang/1.jpg') 
+image = cv2.imread('/home/pi/Desktop/raspberrypi/1.jpg') 
 img = cv2.resize(image.astype(np.float32), (44, 44))
 img -= imagenet_mean
 img = img.reshape((1, 44, 44, 3))
