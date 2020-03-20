@@ -137,6 +137,7 @@ while(1):
     fps_vector.append(fps)
     face_vetor.append(len(faces))
     print('faces: %.2f' % len(faces))
+    print("fps: %.2f" % fps)
 
 average_fps = sum(fps_vector) / len(fps_vector)
 averate_faces = sum(face_vetor) / len(face_vetor)
